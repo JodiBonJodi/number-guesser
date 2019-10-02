@@ -42,6 +42,7 @@ numberButton.addEventListener('click', () => {
     } else if (meaningfulNumber === -1) {
         showGuess.textContent = 'You guessed too low!';
     } else if (meaningfulNumber === 'invalid') {
+        throw new Error ('invalid entry');
         showGuess.textContent = 'That is not a number between 1 and 20';
     }
     
