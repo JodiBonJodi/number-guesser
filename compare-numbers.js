@@ -1,15 +1,17 @@
 const compareNumbers = (guess, correctNumber) => {
-    const showGuess = document.getElementById('your-guess');
-    showGuess.classList.remove('hidden');
+    
 
 
-    if (guess > correctNumber) 
-        showGuess.textContent = 'Your guess is too high.';
-    else if (guess < correctNumber) 
-        showGuess.textContent = 'Your guess is too low.';
-    else 
-        showGuess.textContent = 'Your guess is correct!';
+    if (guess > correctNumber) {
+        return 1;
+    } else if (guess < correctNumber) {
+        return -1;
+    } else {
+        return 0;
+    }
 };
 
 
+
 export default compareNumbers;
+
