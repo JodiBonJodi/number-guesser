@@ -27,9 +27,6 @@ numberButton.addEventListener('click', () => {
     console.log(compareNumbers(guess, correctNumber));
     console.log(meaningfulNumber);
     
-    tries = tries - 1;
-    console.log(tries);
-    triesRemaining.textContent = tries;
 
     if (tries === 0) {
         showGuess.textContent = 'You are out of tries!';
@@ -37,13 +34,21 @@ numberButton.addEventListener('click', () => {
         gameOver.classList.remove('hidden');
         gameOver.textContent = `Game over! The correct answer is ${correctNumber}.`;
     } else if (meaningfulNumber === 0) {
-        showGuess.textContent = 'You guessed the right number!!';
+        showGuess.textContent = 'Nice work! You guessed the right number!!';
         numberButton.disabled = true;
         gameOver.classList.remove('hidden');
     } else if (meaningfulNumber === 1) {
         showGuess.textContent = 'You guessed too high!';
     } else if (meaningfulNumber === -1) {
         showGuess.textContent = 'You guessed too low!';
+    } else if (meaningfulNumber === 'invalid') {
+        showGuess.textContent = 'That is not a number between 1 and 20';
     }
+    
+
+    tries = tries - 1;
+    console.log(tries);
+    triesRemaining.textContent = tries;
+
 });  
 
