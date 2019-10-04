@@ -7,14 +7,13 @@ let numberGuess = document.getElementById('number-guess');
 const showGuess = document.getElementById('your-guess');
 showGuess.classList.remove('hidden');
 const gameOver = document.getElementById('game-over');
-//const correctNumber = 15;
 let tries = 4;
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
-};
+}
+
 let correctNumber = (getRandomInt(21));
-console.log(correctNumber, 'correct number');
 
 
 //this is my button event
@@ -22,13 +21,12 @@ numberButton.addEventListener('click', () => {
 
     
     const guess = parseInt(numberGuess.value, 10);
-    console.log(guess);
     let meaningfulNumber = compareNumbers(guess, correctNumber);
-    console.log(compareNumbers(guess, correctNumber));
-    console.log(meaningfulNumber);
-    
 
-    if (tries === 0) {
+    tries = tries - 1;
+    triesRemaining.textContent = tries;
+
+    if (tries < 1) {
         showGuess.textContent = 'You are out of tries!';
         numberButton.disabled = true;
         gameOver.classList.remove('hidden');
@@ -42,14 +40,11 @@ numberButton.addEventListener('click', () => {
     } else if (meaningfulNumber === -1) {
         showGuess.textContent = 'You guessed too low!';
     } else if (meaningfulNumber === 'invalid') {
-        throw new Error ('invalid entry');
         showGuess.textContent = 'That is not a number between 1 and 20';
     }
     
 
-    tries = tries - 1;
-    console.log(tries);
-    triesRemaining.textContent = tries;
+    
 
 });  
 
