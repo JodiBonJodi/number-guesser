@@ -21,7 +21,7 @@ test('should return too low if the guess is lower than the correct number', func
     //Arrange
     // Set up your parameters and expectations
     const correctNumber = 15;
-    const guess = 9
+    const guess = 9;
     const expected = -1;
     //Act 
     // Call the function you're testing and set the result to a const
