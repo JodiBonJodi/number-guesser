@@ -6,12 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <title>Guess A Number!</title>
 </head>
 
 <body>
+    <main>
+        <h2 class="title">Time to play - GUESS A NUMBER!!!</h2>
 
-    <script src="app.js"></script>
+        <p class="title">The game is super easy! All you have to do is guess a number between 0 and 20. We will let you know if your guess is too high or too low and then you get to guess again. You have four tries to get the correct number. </p>
+
+        <label><h3>Go ahead, guess a number!</h3></label>
+        <label><h4>Tries Remaining: <span id="tries-remaining"></span></h4></label>
+        <br>
+        <input id="number-guess" type="number">
+        <button id="number-button">Click me</button>
+        <br><br>
+        <span id="your-guess" class="hidden"></span>
+        <br><br>
+        <span id="game-over" class="hidden"><span id="correct-number"></span></span>
+        <section class="hidden">
+        <h4>Computer: <span id="computer-number"></span></h4>
+        </section>
+        <script type="module" src="app.js"></script>
+
+    </main>
 </body>
 
 </html>
